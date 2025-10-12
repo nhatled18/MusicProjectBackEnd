@@ -14,7 +14,14 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:5173', // dev Vite
+    'http://localhost:3000', // nếu cần
+    'https://music-project-frontend.vercel.app' // production frontend
+  ],
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
