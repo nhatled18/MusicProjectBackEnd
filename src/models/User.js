@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
 import crypto from 'crypto';
-
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -51,7 +50,6 @@ const userSchema = new mongoose.Schema({
     default: Date.now
   }
 });
-
 // Hash password before saving
 userSchema.pre('save', async function(next) {
   if (!this.isModified('password')) {

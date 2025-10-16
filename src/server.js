@@ -7,6 +7,7 @@ import connectDB from './config/database.js';
 import authRoutes from './routes/auth.js';
 import trackRoutes from './routes/tracks.js';
 import searchRoutes from './routes/search.js';
+import favoriteRoutes from './routes/favorite.js';
 
 // Load env vars
 dotenv.config();
@@ -36,6 +37,7 @@ if (!dbConnected) {
 app.use('/api/auth', authRoutes);
 app.use('/api/tracks', trackRoutes);
 app.use('/api/search', searchRoutes);
+app.use('/api/favorites', favoriteRoutes);
 
 // Root route
 app.get('/', (req, res) => {
