@@ -8,6 +8,7 @@ import authRoutes from './routes/auth.js';
 import trackRoutes from './routes/tracks.js';
 import searchRoutes from './routes/search.js';
 import favoriteRoutes from './routes/favorite.js';
+import followRoutes from './routes/follow.js';
 
 // Load env vars
 dotenv.config();
@@ -38,6 +39,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/tracks', trackRoutes);
 app.use('/api/search', searchRoutes);
 app.use('/api/favorites', favoriteRoutes);
+app.use('/api/follow', followRoutes);
 
 // Root route
 app.get('/', (req, res) => {
